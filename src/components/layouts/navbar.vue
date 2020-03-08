@@ -78,34 +78,15 @@
                         back <i class="fa fa-angle-right pl-2"></i>
                       </div>
                     </li>
-                    <li><a href="#">western ware</a></li>
-                    <li><a href="#">TV, Appliances</a></li>
-                    <li><a href="#">Pets Products</a></li>
-                    <li><a href="#">Car, Motorbike</a></li>
-                    <li><a href="#">Industrial Products</a></li>
-                    <li><a href="#">Beauty, Health Products</a></li>
-                    <li><a href="#">Grocery Products </a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Bags, Luggage</a></li>
-                    <li><a href="#">Movies, Music </a></li>
-                    <li><a href="#">Video Games</a></li>
-                    <li><a href="#">Toys, Baby Products</a></li>
-                    <li class="mor-slide-open">
-                      <ul>
-                        <li><a href="#">Bags, Luggage</a></li>
-                        <li><a href="#">Movies, Music </a></li>
-                        <li><a href="#">Video Games</a></li>
-                        <li><a href="#">Toys, Baby Products</a></li>
-                      </ul>
+                    <li v-for="(child,index) in items.children" :key="index">
+                      <router-link tag="div" :to="{path: '/navigate/'+formatLink(child.child)}">
+                        <img src="static/assets/uploads/icons/6.png"
+                             width="25" height="19">{{child.child}}
+                      </router-link>
                     </li>
-                    <li>
-                      <a class="mor-slide-click">
-                        mor category
-                        <i class="fa fa-angle-down pro-down" ></i>
-                        <i class="fa fa-angle-up pro-up" ></i>
-                      </a>
-                    </li>
+
                   </ul>
+
                 </div>
                 <div class="desc-nav-block">
                   <i class="fa fa-volume-control-phone tell" aria-hidden="true"></i>
@@ -122,7 +103,7 @@
             </div>
             <div class="col-4">
               <div class="logo-block">
-                <a href="#">
+                <a href="/">
                   <img src="static/assets/uploads/sites/flash-logo.png" width="150px" alt="logo" class="img-fluid  ">
                 </a>
               </div>
@@ -207,7 +188,7 @@
                         </li>
                         <!--HOME-->
                         <li>
-                          <a href="#" class="light-menu-item">Home</a>
+                          <a href="/" class="light-menu-item">Home</a>
 
                         </li>
                         <!--HOME-END-->
