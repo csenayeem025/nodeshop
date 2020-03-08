@@ -17,7 +17,7 @@
     "bulma": "^0.6.2",
     "child_process": "^1.0.2",
     "core-util-is": "^1.0.2",
-    "dominant-color": "^0.0.1",
+    "dominant-color": "0.0.1",
     "firebase": "^4.11.0",
     "firebaseui": "^2.6.3",
     "font-awesome": "^4.7.0",
@@ -44,7 +44,7 @@
     "vuex-persistedstate": "^2.7.1"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.2.6",
     "babel-core": "^6.26.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.5",
