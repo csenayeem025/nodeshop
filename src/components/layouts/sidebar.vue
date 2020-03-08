@@ -5,7 +5,7 @@
 			<requests></requests>
 		</modal>
 		<div class="menu-wraper">
-			
+
 			<ul class="menu-list">
 				<li>
 					<a href="">Coupons</a>
@@ -25,7 +25,7 @@
 					<a @click.prevent="showmodal = true">
 						Product Request
 					</a>
-					
+
 				</li>
 				<li>
 					<a href="">Referral</a>
@@ -43,7 +43,7 @@
 			    	</router-link>
 			    </li>
 			</ul>
-			
+
 			<ul class="menu-list" style="flex-grow:1;">
 				<li v-for="(menu,index) in menus" :key="index" @click.stop="toggle(menu)" >
 					<router-link tag="a"
@@ -63,9 +63,9 @@
 					</router-link>
 
 					<ul class="menu-list" v-if="menu.children && menu.children.length && menu.expanded">
-						<li v-for="(submenu,subindex) in menu.children" 
+						<li v-for="(submenu,subindex) in menu.children"
 						:key="subindex" @click.stop="toggle(submenu)">
-							<router-link tag="a" :to="{path: '/navigate/'+formatMenu(submenu.name)}" 
+							<router-link tag="a" :to="{path: '/navigate/'+formatMenu(submenu.name)}"
 							:class="{'has-text-danger has-text-weight-bold' : activate(submenu.name)}">
 								<span>{{submenu.name}}</span>
 								<span class="icon is-pulled-right" v-if="submenu.children && submenu.children.length">
@@ -82,7 +82,7 @@
 							</ul>
 						</li>
 					</ul>
-				</li>	
+				</li>
 			</ul>
 		</div>
 	</aside>
@@ -141,7 +141,7 @@ export default {
   	this.getCategories()
   	this.offerCategory()
   	//this.traverseMenus()
-  
+
   },
   watch:{
   	//'$route' : 'activate'
@@ -170,7 +170,7 @@ export default {
   		console.log(menu)
   		menu.expanded = !menu.expanded
   		this.traverseMenus(menu)
-  		
+
   	},
   	activate(uri){
   		if(this.$route.params.uri){
@@ -183,7 +183,7 @@ export default {
 	  	}
   	},
   	findObject(node, name) {
-  		
+
   		if(node.name === name){
   			return node
   		}
@@ -228,7 +228,7 @@ export default {
 	collapse(menu,val){
 		if(menu.name !== val.name){
 			if(!this.isAncestor(menu,val)){
-				
+
 				menu.expanded = false
 
 			}
@@ -258,9 +258,8 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>	
-
-	@import("https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed");
+<style lang="css" scoped>
+  
 
 
 	.menu{
@@ -273,13 +272,13 @@ export default {
 	#sidebar{
 		margin-top: 52px;
 		z-index: 2;
-		
+
 		font-family: 'Ubuntu', sans-serif;
 		/*background: #F0F0F4;*/
 		background: #fff;
 		border-right: 1px solid #ddd;
-		
-		
+
+
 
 	}
 
@@ -327,7 +326,7 @@ export default {
     width: 5px;
     background: none!imporant;
     border:none!imporant;
-    
+
   }
 
 
@@ -336,7 +335,7 @@ export default {
     background: none;
     border: none;
   }
-   
+
   aside::-webkit-scrollbar-thumb {
     outline: 1px solid slategrey;
     border-radius: 10px;
