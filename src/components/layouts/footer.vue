@@ -517,4 +517,10 @@ export default {
   .button.is-danger {
     background-color: #EE1A24 !important;
   }
+  .theme-modal#exampleModal .offer-content p{
+    color:#fff !important;
+  }
+  .theme-modal .modal-dialog .modal-content .modal-body .modal-bg .offer-content h2{
+    color:#fff !important;
+  }
 </style>
