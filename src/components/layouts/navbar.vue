@@ -10,7 +10,7 @@
             <div class="col-xl-5 col-md-7 col-sm-6">
               <div class="top-header-left">
                 <div class="shpping-order">
-                  <h6>free shipping on order over $99 </h6>
+                  <h6>free shipping on order over  <i class="icofont icofont-cur-taka"></i>99 </h6>
                 </div>
                 <div class="app-link">
                   <h6>
@@ -139,7 +139,7 @@
                   <li class="mobile-cart cart-hover-div" onclick="openCart()">
                     <a href="#">
                       <i class="icon-shopping-cart "></i>
-                      <div class="cart-item"><div>$00.0<span>cart</span></div></div>
+                      <div class="cart-item"><div> <i class="icofont icofont-cur-taka"></i>00.0<span>cart</span></div></div>
                     </a>
                   </li>
                 </ul>
@@ -311,7 +311,7 @@
                         <!--mega-meu start-->
                         <li class="mega" id="hover-cls">
                           <a href="#" class="light-menu-item">features</a>
-                         
+
                         </li>
                         <!--mega-meu end-->
                       </ul>

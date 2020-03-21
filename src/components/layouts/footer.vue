@@ -177,7 +177,7 @@
                      <h4>item name</h4>
                    </a>
                    <h4>
-                     <span>1 x $ 299.00</span>
+                     <span>1 x <i class="icofont icofont-cur-taka"></i>299.00</span>
                    </h4>
                  </div>
                </div>
@@ -197,7 +197,7 @@
                      <h4>item name</h4>
                    </a>
                    <h4>
-                     <span>1 x $ 299.00</span>
+                     <span>1 x <i class="icofont icofont-cur-taka"></i>299.00</span>
                    </h4>
                  </div>
                </div>
@@ -214,7 +214,7 @@
                    <a href="#">
                      <h4>item name</h4>
                    </a>
-                   <h4><span>1 x $ 299.00</span></h4>
+                   <h4><span>1 x <i class="icofont icofont-cur-taka"></i>299.00</span></h4>
                  </div>
                </div>
                <div class="close-circle">
@@ -227,7 +227,7 @@
            <ul class="cart_total">
              <li>
                <div class="total">
-                 <h5>subtotal : <span>$299.00</span></h5>
+                 <h5>subtotal : <span><i class="icofont icofont-cur-taka"></i>299.00</span></h5>
                </div>
              </li>
              <li>
