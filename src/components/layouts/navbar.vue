@@ -196,18 +196,6 @@
                         <!--SHOP-->
                         <li>
                           <a href="#" class="light-menu-item">shop</a>
-                          <ul>
-                            <li><a href="category-page(left-sidebar).html">left sidebar</a></li>
-                            <li><a href="category-page(right-sidebar).html">right sidebar</a></li>
-                            <li><a href="category-page(no-sidebar).html">no sidebar</a></li>
-                            <li><a href="category-page(sidebar-popup).html">sidebar popup</a></li>
-                            <li><a href="category-page(metro).html">metro <span class="new-tag">new</span></a></li>
-                            <li><a href="category-page(full-width).html">full width <span class="new-tag">new</span></a></li>
-                            <li><a href="category-page(infinite-scroll).html">infinite scroll</a></li>
-                            <li><a href=category-page(3-grid).html>3 grid</a></li>
-                            <li><a href="category-page(6-grid).html">6 grid</a></li>
-                            <li><a href="category-page(list-view).html">list view</a></li>
-                          </ul>
                         </li>
                         <!--SHOP-END-->
                         <!--product-meu start-->
@@ -323,94 +311,7 @@
                         <!--mega-meu start-->
                         <li class="mega" id="hover-cls">
                           <a href="#" class="light-menu-item">features</a>
-                          <ul class="mega-menu full-mega-menu ratio_landscape">
-                            <li>
-                              <div class="container">
-                                <div class="row">
-                                  <div class="col mega-box">
-                                    <div class="link-section">
-                                      <div class="menu-title">
-                                        <h5>portfolio</h5></div>
-                                      <div class="menu-content">
-                                        <ul>
-                                          <li><a href="grid-2-col.html">portfolio grid 2</a></li>
-                                          <li><a href="grid-3-col.html">portfolio grid 3</a></li>
-                                          <li><a href="grid-4-col.html">portfolio grid 4</a></li>
-                                          <li><a href="grid-6-col.html">portfolio grid 6</a></li>
-                                          <li><a href="masonary-2-grid.html">mesonary grid 2</a></li>
-                                          <li><a href="masonary-3-grid.html">mesonary grid 3</a></li>
-                                          <li><a href="masonary-4-grid.html">mesonary grid 4</a></li>
-                                          <li><a href="masonary-fullwidth.html">mesonary full width</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mega-box">
-                                    <div class="link-section">
-                                      <div class="menu-title">
-                                        <h5>add to cart</h5></div>
-                                      <div class="menu-content">
-                                        <ul>
-                                          <li><a href="layout-5.html">cart modal popup</a></li>
-                                          <li><a href="layout-6.html">qty. counter </a></li>
-                                          <li><a href="index.html">cart top</a></li>
-                                          <li><a href="layout-2.html">cart bottom</a></li>
-                                          <li><a href="layout-3.html">cart left</a></li>
-                                          <li><a href="layout-4.html">cart right</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mega-box">
-                                    <div class="link-section">
-                                      <div class="menu-title">
-                                        <h5>shortcodes</h5></div>
-                                      <div class="menu-content">
-                                        <ul>
-                                          <li><a href="element-title.html">title</a></li>
-                                          <li><a href="element-banner.html">collection banner</a></li>
-                                          <li><a href="element-slider.html">home slider</a></li>
-                                          <li><a href="element-category.html">category</a></li>
-                                          <li><a href="element-service.html">service</a></li>
-                                          <li><a href="element-image-ratio.html">image size ratio</a></li>
-                                          <li><a href="element-tab.html">tab</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mega-box">
-                                    <div class="link-section">
-                                      <div class="menu-title">
-                                        <h5>email template</h5>
-                                      </div>
-                                      <div class="menu-content">
-                                        <ul>
-                                          <li><a href="email-order-success.html">order success</a></li>
-                                          <li><a href="email-order-success-tow.html">order success 2</a></li>
-                                          <li><a href="email-template.html">email template</a></li>
-                                          <li><a href="email-template-tow.html">email template 2</a></li>
-                                        </ul>
-                                      </div>
-                                      <div class="menu-title menu-secon-title">
-                                        <h5>Easy to use</h5>
-                                      </div>
-                                      <div class="menu-content">
-                                        <ul>
-                                          <li><a href="button.html">element button</a></li>
-                                          <li><a href="instagram.html">element instagram</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col mega-box product ">
-                                    <div class="mega-img">
-                                      <img src="static/themes/assets/images/mega-banner.jpg" alt="menu-banner" class="img-fluid">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
+                         
                         </li>
                         <!--mega-meu end-->
                       </ul>
