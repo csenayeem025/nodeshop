@@ -250,7 +250,7 @@
         <div class="row1">
           <div class="columns" style="margin-top: 20px;">
             <div class="column has-text-centered">
-              <p class="title-text is-uppercase has-text-black">NEW Product</p>
+              <p class="title-text is-uppercase has-text-black">new arrival product</p>
               <span class="title-modifier"></span>
             </div>
           </div>
