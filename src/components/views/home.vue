@@ -244,6 +244,46 @@
 
 
     </section>
+
+    <section class="brand-panel">
+      <div class="custom-container">
+        <div class="row1">
+          <div class="columns" style="margin-top: 20px;">
+            <div class="column has-text-centered">
+              <p class="title-text is-uppercase has-text-black">NEW Product</p>
+              <span class="title-modifier"></span>
+            </div>
+          </div>
+          <!-- ./title bar -->
+
+          <div class="clearfix"></div>
+          <div class="columns" v-if="hotdeals.length < 1">
+            <div class="column">
+              <div class="has-text-centered">
+                <span class="fa fa-ban has-text-danger"></span><br>
+                <h2>Nothing found</h2>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-third-tablet is-one-fifth-desktop is-one-fifth-widescreen is-one-fifth-fullhd" v-for="(product, index) in hotdeals" :key="index">
+              <productothers :product="product"></productothers>
+            </div>
+          </div>
+
+          <!-- ./inode -->
+
+          <infinite-loading @infinite="loadMore" ref="infiniteLoading" spinner="spiral" v-if="items.node == 'leaf'">
+            <div slot="no-more"></div>
+          </infinite-loading>
+        </div>
+      </div>
+
+
+
+    </section>
     <section class="brand-panel">
       <div class="custom-container">
         <div class="row1">
