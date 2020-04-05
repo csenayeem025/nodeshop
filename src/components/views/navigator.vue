@@ -210,4 +210,27 @@ export default {
 	.inode{
 		min-height: 250px;
 	}
+  .title-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 3px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #afafaf;
+    display: inline-block;
+    position: relative;
+  }
+  .title-text:after {
+    content: "";
+    height: 6px;
+    width: 60px;
+    position: absolute;
+    background: #EE1A24;
+    bottom: -3px;
+    left: 50%;
+    -ms-transform: translateX(-50%) skew(-25deg);
+    transform: translateX(-50%) skew(-25deg);
+    -webkit-transform: translateX(-50%) skew(-25deg);
+  }
 </style>
