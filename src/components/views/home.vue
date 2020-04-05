@@ -286,8 +286,16 @@
     <!--rounded category start-->
     <section class="rounded-category">
       <div class="container">
+        <div class="columns" style="margin-top: 20px;">
+          <div class="column has-text-centered">
+            <p class="title-text is-uppercase has-text-black">Brand product</p>
+            <span class="title-modifier"></span>
+          </div>
+        </div>
         <div class="row">
+
           <div class="col">
+
             <div class="slide-6 no-arrow">
               <div>
                 <div class="category-contain">
