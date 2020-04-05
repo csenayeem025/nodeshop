@@ -182,28 +182,26 @@
     <!--collection banner end-->
 
 		<!-- ./banner -->
-
-    <!--top brand panel start-->
-    <section class="brand-panel section-py-space">
-      <div class="brand-panel-box">
-        <div class="brand-panel-contain">
-          <ul>
-            <li><a href="#">top brand</a></li>
-            <li><a>:</a></li>
-            <li><a href="#">aerie</a></li>
-            <li><a href="#">baci lingrie</a></li>
-            <li><a href="#">gerbe</a></li>
-            <li><a href="#">jolidon</a></li>
-            <li><a href="#">oysho</a></li>
-            <li><a href="#">ultimo</a></li>
-            <li><a href="#">vassarette</a></li>
-            <li><a href="#">wonderbra</a></li>
-          </ul>
+    <!--discount banner start-->
+    <section class="discount-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="discount-banner-contain">
+              <h2>Discount on every single item on our site.</h2>
+              <h1><span>OMG! Just Look at the</span> <span>great Deals!</span></h1>
+              <div class="rounded-contain rounded-inverse">
+                <div class="rounded-subcontain">
+                  How does it feel, when you see great discount deals for each product?
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
     </section>
-    <!--top brand panel end-->
+    <!--discount banner end-->
+   
 
     <section class="brand-panel">
       <div class="custom-container">
