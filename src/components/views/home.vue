@@ -488,7 +488,45 @@
       </div>
     </section>
     <!--collection banner end-->
+    <section class="brand-panel">
+      <div class="custom-container">
+        <div class="row1">
+          <div class="columns" style="margin-top: 20px;">
+            <div class="column has-text-centered">
+              <p class="title-text is-uppercase has-text-black">Festival Product</p>
+              <span class="title-modifier"></span>
+            </div>
+          </div>
+          <!-- ./title bar -->
 
+          <div class="clearfix"></div>
+          <div class="columns" v-if="hotdeals.length < 1">
+            <div class="column">
+              <div class="has-text-centered">
+                <span class="fa fa-ban has-text-danger"></span><br>
+                <h2>Nothing found</h2>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-third-tablet is-one-fifth-desktop is-one-fifth-widescreen is-one-fifth-fullhd" v-for="(product, index) in hotdeals" :key="index">
+              <productothers :product="product"></productothers>
+            </div>
+          </div>
+
+          <!-- ./inode -->
+
+          <infinite-loading @infinite="loadMore" ref="infiniteLoading" spinner="spiral" v-if="items.node == 'leaf'">
+            <div slot="no-more"></div>
+          </infinite-loading>
+        </div>
+      </div>
+
+
+
+    </section>
     <!--testimonial start-->
     <section class="testimonial">
       <div class="container">
@@ -541,7 +579,45 @@
     </section>
     <!--testimonial end-->
 
+    <section class="brand-panel">
+      <div class="custom-container">
+        <div class="row1">
+          <div class="columns" style="margin-top: 20px;">
+            <div class="column has-text-centered">
+              <p class="title-text is-uppercase has-text-black">TVC Product</p>
+              <span class="title-modifier"></span>
+            </div>
+          </div>
+          <!-- ./title bar -->
 
+          <div class="clearfix"></div>
+          <div class="columns" v-if="hotdeals.length < 1">
+            <div class="column">
+              <div class="has-text-centered">
+                <span class="fa fa-ban has-text-danger"></span><br>
+                <h2>Nothing found</h2>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-mobile is-multiline">
+            <div class="column is-half-mobile is-one-third-tablet is-one-fifth-desktop is-one-fifth-widescreen is-one-fifth-fullhd" v-for="(product, index) in hotdeals" :key="index">
+              <productothers :product="product"></productothers>
+            </div>
+          </div>
+
+          <!-- ./inode -->
+
+          <infinite-loading @infinite="loadMore" ref="infiniteLoading" spinner="spiral" v-if="items.node == 'leaf'">
+            <div slot="no-more"></div>
+          </infinite-loading>
+        </div>
+      </div>
+
+
+
+    </section>
     <!-- this is wrapper -->
 	</div>
       </keep-alive>
@@ -552,6 +628,7 @@
 import { Carousel, Slide } from 'vue-carousel'
 import productkit from '@/components/elements/productkit'
 import product from '@/components/elements/productkit'
+import productothers from '@/components/elements/productkitothers'
 import InfiniteLoading from 'vue-infinite-loading'
 import axios from 'axios'
 
@@ -588,7 +665,7 @@ export default {
   },
   mixins: [myMixin],
   components:{
-  	productkit,Carousel,Slide,InfiniteLoading,product
+  	productkit,Carousel,Slide,InfiniteLoading,product,productothers
   },
   methods:{
     ...mapActions([
@@ -783,6 +860,27 @@ export default {
     left: 0;
   }
 
-
-
+.title-text{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 3px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #afafaf;
+  display: inline-block;
+  position: relative;
+}
+  .title-text:after {
+    content: "";
+    height: 6px;
+    width: 60px;
+    position: absolute;
+    background: #EE1A24;
+    bottom: -3px;
+    left: 50%;
+    -ms-transform: translateX(-50%) skew(-25deg);
+    transform: translateX(-50%) skew(-25deg);
+    -webkit-transform: translateX(-50%) skew(-25deg);
+  }
 </style>
