@@ -201,7 +201,7 @@
       </div>
     </section>
     <!--discount banner end-->
-   
+
 
     <section class="brand-panel">
       <div class="custom-container">
@@ -282,6 +282,118 @@
 
 
     </section>
+    <!--collection banner start-->
+    <!--rounded category start-->
+    <section class="rounded-category">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="slide-6 no-arrow">
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/1.png" alt="category  " class="img-fluid">
+                    </div>
+                    <div>
+                      <div  class="btn-rounded">
+                        flower
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/2.png" alt="category " class="img-fluid">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        Furniture
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/3.png" alt="category " class="img-fluid">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        Bag
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/4.png" alt="category" class="img-fluid ">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        Tools
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/5.png" alt="category" class="img-fluid ">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        Grocery
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/6.png" alt="category" class="img-fluid ">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        camera
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="category-contain">
+                  <a href="#">
+                    <div class="img-wrapper">
+                      <img src="/static/assets/images/layout-1/rounded-cat/7.png" alt="category" class="img-fluid ">
+                    </div>
+                    <div>
+                      <div class="btn-rounded">
+                        cardigans
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--rounded category end-->
+    <!--collection banner end-->
     <section class="brand-panel">
       <div class="custom-container">
         <div class="row1">
