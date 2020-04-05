@@ -43,8 +43,10 @@
                                     english <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
                     <ul class="language-dropdown-open">
-                      <li><a href="#">english</a></li>
-                      <li><a href="#">Bangla</a></li>
+                      <li><a href="#">English</a></li>
+                      <li><a href="#">বাংলা</a></li>
+                      <li><a href="#">हिन्दी</a></li>
+                      <li><a href="#">Chinese</a></li>
                     </ul>
                   </div>
                   <div class="curroncy-dropdown">
@@ -54,6 +56,8 @@
                     <ul class="curroncy-dropdown-open">
                       <li><a href="#"><i class="icofont icofont-cur-taka"></i>BDT</a></li>
                       <li><a href="#"><i class="fa fa-usd"></i>usd</a></li>
+                      <li><a href="#"><i class="fa fa-rupee"></i>rupee</a></li>
+                      <li><a href="#"><i class="fa fa-cny"></i>Renminbi</a></li>
                     </ul>
                   </div>
                 </div>
