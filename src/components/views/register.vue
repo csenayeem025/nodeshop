@@ -29,7 +29,7 @@
                     <label for="review">Password</label>
                     <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
                   </div>
-                  <div class="col-md-12 form-group"><a href="#" class="btn btn-normal">create Account</a></div>
+                  <div class="col-md-12 form-group"><a href="javascript:void(0);" @click="signup()" class="btn btn-normal">create Account</a></div>
                 </div>
                 <div class="form-row">
                   <div class="col-md-12 ">
@@ -168,6 +168,7 @@ export default {
     	}
   	},
   	signup(){
+  	    alert(999);
   		var self = this
 		this.sloading = true
 		axios.post(this.$host+'register',{

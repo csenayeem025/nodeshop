@@ -18,7 +18,7 @@
                   <label for="review">Password</label>
                   <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
                 </div>
-                <a href="#" class="btn btn-normal">Login</a>
+                <a href="javascript:void(0);" class="btn btn-normal">Login</a>
                 <router-link  class="float-right txt-default mt-2" :to="{path: '/forget-pwd/'}">Forgot your password?</router-link>
 <!--                <a class="float-right txt-default mt-2" href="forget-pwd.html" id="fgpwd">Forgot your password?</a>-->
               </form>

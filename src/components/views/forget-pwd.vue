@@ -15,7 +15,7 @@
                     <div class="form-group">
                       <input type="text" class="form-control" id="email" placeholder="Enter Your Email" required="">
                     </div>
-                  </div><a href="#" class="btn btn-normal">Submit</a>
+                  </div><a href="javascript:void(0);" class="btn btn-normal">Submit</a>
                 </div>
               </form>
             </div>
