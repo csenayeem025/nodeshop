@@ -1,5 +1,5 @@
 <template>
-	<div>
+  <div>
 
     <!--header start-->
     <header>
@@ -96,8 +96,10 @@
                             <span>+88 01738 912894</span>
                         </span>
                   <div class="onhover-dropdown ">
-                    <i class="icon-user mobile-user " onclick="openAccount()">
-                    </i>
+                    <router-link :to="{path: '/login/'}"><i class="icon-user mobile-user"></i></router-link>
+
+                    <!--                    <i class="icon-user mobile-user " onclick="openAccount()">-->
+                    <!--                    </i>-->
                   </div>
                 </div>
               </div>
@@ -166,7 +168,7 @@
                         </button>
                         <h5 class="mb-0  text-white title-font">Shop by category</h5>
                       </nav>
-                      <div class="collapse show nav-desk" id="navbarToggleExternalContent">
+                      <div :class="'collapse '+isLeftMenuShow+' nav-desk'" id="navbarToggleExternalContent">
                         <ul class="nav-cat title-font">
                           <li v-for="(child,index) in items.children" :key="index">
                             <router-link tag="div" :to="{path: '/navigate/'+formatLink(child.child)}">
@@ -407,57 +409,74 @@
     </header>
 
 
-	</div>
+  </div>
 </template>
 
 <script>
 
 
-import axios from 'axios'
+    import axios from 'axios'
 
-export default {
+    export default {
 
-  name: 'navbar',
+        name: 'navbar',
 
-  data () {
-    return {
-        items: [],
-    	showburger: false,
-    	modalshow: false,
-    	item:''
+        data () {
+            return {
+                items: [],
+                isLeftMenuShow:'',
+                showburger: false,
+                modalshow: false,
+                item:''
 
+            }
+        },
+        computed: {
+
+        },
+        methods: {
+
+            getFood(){
+                var self = this
+                axios.get(this.$host+'items/Food')
+                    .then(response=>{
+                        console.log(response)
+                        self.items = response.data
+                    })
+            },
+            formatLink(link){
+                return link.split(" ").join("-")
+            },
+
+
+        },
+        components:{
+
+        },
+
+        watch:{
+            $route (to, from){
+                if(this.$route.path=='/' || this.$route.name=='navigate'){
+                    this.isLeftMenuShow='show';
+                }else{
+                    this.isLeftMenuShow='';
+                }
+            }
+        },
+
+        mounted(){
+            this.getFood();
+
+            console.log('page: ',this.$route);
+            if(this.$route.path=='/' || this.$route.name=='navigate'){
+                this.isLeftMenuShow='show';
+            }else{
+                this.isLeftMenuShow='';
+            }
+
+
+        }
     }
-  },
-  computed: {
-
-  },
-  methods: {
-
-           getFood(){
-  		var self = this
-  		axios.get(this.$host+'items/Food')
-  		.then(response=>{
-  			console.log(response)
-  			self.items = response.data
-  		})
-  	},
-      formatLink(link){
-      return link.split(" ").join("-")
-    },
-
-
-  },
-  components:{
-
-  },
-
-
-
-  mounted(){
-    this.getFood()
-
-  }
-}
 </script>
 
 <style lang="css" scoped>
