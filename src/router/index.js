@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
+import VeeValidate from 'vee-validate'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
+Vue.use(VeeValidate)
 
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
