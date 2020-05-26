@@ -8,8 +8,8 @@
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <div class="theme-card">
-              <h3>Forget Your Password</h3>
-              <form id="fromForget" class="theme-form" @submit.prevent="forgot">
+              <h3>Set new Password</h3>
+              <form id="fromForget" class="theme-form" @submit.prevent="setNewPassword">
                 <div class="msg-nwts-vue" v-if="error_text">
                   <div class="alert alert-danger" v-html="error_text"></div>
                 </div>
@@ -19,8 +19,8 @@
                 <div class="form-row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="text" class="form-control" id="email" placeholder="Enter Your Email" v-validate="'required'" v-model="email" name="email">
-                      <p v-if="submitted && errors.has('email')" class="error-message">{{ errors.first('email') }}</p>
+                      <input type="password" class="form-control" id="rpassword" v-validate="'required'" v-model="password" name="password" placeholder="Enter your password" >
+                      <p v-if="submitted && errors.has('password')" class="error-message">{{ errors.first('password') }}</p>
                     </div>
                   </div>
                   <button class="btn btn-normal">Submit</button>
@@ -62,7 +62,7 @@
             }
         },
         methods:{
-            forgot(e){
+            setNewPassword(e){
                 e.preventDefault();
                 this.error_text = '';
                 this.success = '';
@@ -73,14 +73,14 @@
                     if (result) {
                         var form = document.getElementById('fromForget');
                         var formData = new FormData();
-                        formData.append('email', self.email);
+                        formData.append('password', self.password);
+                        formData.append('token', this.$router.currentRoute.query.token);
 
-
-                        axios.post(this.$host + 'forget', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then(response => {
+                        axios.post(this.$host + 'setnewpassword', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then(response => {
                             this.loading = false;
                             if(response.data==1){
-                                this.success='An email is sent to your email.';
-                                this.$router.push('/thank-you?t=forget');
+                                this.success='Your password is successfully reset.';
+                                this.$router.push('/thank-you?t=reset');
                             }else{
                                 this.error_text='Sorry, you are not authorized user.';
                             }

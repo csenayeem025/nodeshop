@@ -243,7 +243,7 @@
      <!-- Add to cart bar end-->
 
      <!--Newsletter modal popup start-->
-     <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+     <div v-if="is_home_page==1" class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
          <div class="modal-content">
            <div class="modal-body">
@@ -507,9 +507,19 @@ export default {
 
   data () {
     return {
-
+        is_home_page:0
     }
-  }
+  },
+    methods:{
+      is_home_page_method(){
+          if(this.$router.currentRoute.path=='/'){
+              this.is_home_page=1;
+          }
+      }
+    },
+    mounted() {
+        this.is_home_page_method()
+    }
 }
 </script>
 

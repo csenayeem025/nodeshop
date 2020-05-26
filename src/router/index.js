@@ -13,7 +13,11 @@ Vue.use(VueCarousel);
 import home from '@/components/views/home'
 import login from '@/components/views/login'
 import register from '@/components/views/register'
+import register_vendor from '@/components/views/register-vendor'
+import thank_you from '@/components/views/register-thankyou'
+import email_confirmation from '@/components/views/email-confirmation'
 import forget_pwd from '@/components/views/forget-pwd'
+import set_new_pwd from '@/components/views/set-new-pwd'
 import navigators from '@/components/views/navigator'
 import search from '@/components/views/search'
 import checkout from '@/components/views/checkout'
@@ -64,9 +68,29 @@ const routes = [
     component: register
   },
   {
+    name: 'register-vendor',
+    path:'/register-vendor',
+    component: register_vendor
+  },
+  {
+    name: 'thank-you',
+    path:'/thank-you',
+    component: thank_you
+  },
+  {
+    name: 'email-confirmation',
+    path:'/email-confirmation',
+    component: email_confirmation
+  },
+  {
     name: 'forget-pwd',
     path:'/forget-pwd',
     component: forget_pwd
+  },
+  {
+    name: 'newpassword',
+    path:'/newpassword',
+    component: set_new_pwd
   },
 	{
 	    name: 'navigate',

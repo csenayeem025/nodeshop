@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-lg-4 offset-lg-4">
             <div class="theme-card">
-              <h3 class="text-center">Create account</h3>
+              <h3 class="text-center">Create Vendor account</h3>
               <form ref="registration_form" id="fromElements" @submit.prevent="signup" class="theme-form">
                 <div class="msg-nwts-vue" v-if="error_text">
                   <div class="alert alert-danger" v-html="error_text"></div>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-12 ">
-                    <input type="hidden" name="role" value="customer" />
-                    <p>Do you want to create a <router-link  class="txt-default" :to="{path: '/register-vendor/'}">Vendor Account</router-link>?</p>
+                    <input type="hidden" name="role" v-model="role" value="vendor" />
+                    <p>Do you want to create a <router-link  class="txt-default" :to="{path: '/register/'}">Customer Account</router-link>?</p>
                     <p >Have you already account? <router-link  class="txt-default" :to="{path: '/login/'}">click</router-link> here to <router-link  class="txt-default" :to="{path: '/login/'}">Login</router-link></p>
                   </div>
                 </div>
@@ -70,6 +70,15 @@
 
     import SimpleSpinner from 'vue-simple-spinner'
 
+    function initialState () {
+        return {
+            name: '',
+            mobile: '',
+            email: '',
+            password: '',
+            role:'vendor'
+        }
+    }
     export default {
 
         name: 'login',
@@ -85,6 +94,7 @@
                 error: '',
                 sname:'',
                 name:'',
+                role:'vendor',
                 remail:'',
                 rpassword:'',
                 semail:'',
@@ -104,6 +114,7 @@
         methods:{
 
 
+
             signup:function(e) {
                 e.preventDefault();
                 this.error_text = '';
@@ -111,16 +122,17 @@
                 this.loading = true;
                 this.submitted = true;
                 let self=this;
+
                 this.$validator.validateAll().then((result) => {
                     if (result) {
                         var form = document.getElementById('fromElements');
                         var formData = new FormData(form);
                         //formData.append('user_id', this.results.user_id);
-                        //console.log(formData.$data);
+
 
                         axios.post(this.$host+'register',formData, { headers: { 'Content-Type': 'multipart/form-data'  }})
                             .then((response) => {
-                                this.loading = false;
+                                self.loading = false;
                                 if(response.data==1){
                                     this.success='Successfully updated.';
                                     this.$router.push('/thank-you');
@@ -129,13 +141,20 @@
                                 }
                             })
                             .catch(function (error) {
-                                this.loading = false;
+                                self.loading = false;
                             });
                         return;
 
                     }
                     this.loading = false;
                 });
+            },
+            resetForm(){
+                this.name= '';
+                this.mobile= '';
+                this.email= '';
+                this.password= '';
+                this.role='vendor';
             }
         },
         computed:{
