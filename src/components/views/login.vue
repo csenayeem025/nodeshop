@@ -144,8 +144,9 @@
 
                             })
                         }
+                    }else{
+                        this.loading = false;
                     }
-                    //this.loading = false;
                 });
 
 
