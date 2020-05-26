@@ -81,8 +81,8 @@ Vue.config.productionTip = false
 // })
 
 
-//Vue.prototype.$host = 'http://admin.onlinebigbazaar.com/api/'
-Vue.prototype.$host = 'http://127.0.0.1:8000/api/'
+Vue.prototype.$host = 'http://admin.onlinebigbazaar.com/api/'
+//Vue.prototype.$host = 'http://127.0.0.1:8000/api/'
 Vue.prototype.$converter = require('number-to-words')
 Vue.prototype.$perPage = 20
 Vue.prototype.$first = (list)=>{

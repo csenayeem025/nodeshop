@@ -77,7 +77,11 @@
       </div>
     </section>
     <!-- section end -->
-
+    <div class="loader-wrapper" v-if="loading==true">
+      <div>
+        <img src="/static/themes/assets/images/loader.gif" alt="loader">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -88,7 +92,7 @@ export default {
 
   data () {
     return {
-
+        loading:false
     }
   },
     methods:{

@@ -32,7 +32,11 @@
       </div>
     </section>
     <!--Section ends-->
-
+    <div class="loader-wrapper" v-if="loading==true">
+      <div>
+        <img src="/static/themes/assets/images/loader.gif" alt="loader">
+      </div>
+    </div>
 
   </div>
 </template>
@@ -90,7 +94,7 @@
                         });
 
                     }
-                    this.loading = false;
+                   // this.loading = false;
                 });
             }
 
