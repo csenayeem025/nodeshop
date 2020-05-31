@@ -21,14 +21,20 @@ import set_new_pwd from '@/components/views/set-new-pwd'
 import navigators from '@/components/views/navigator'
 import search from '@/components/views/search'
 import checkout from '@/components/views/checkout'
-import myorders from '@/components/views/myorders'
+//import myorders from '@/components/views/myorders'
 import invoice from '@/components/views/invoice'
 import help from '@/components/views/help'
 import auth from '@/components/views/Auth'
 import popular from '@/components/views/popular'
 import special from '@/components/views/special'
 import discount from '@/components/views/discount'
-import profile from '@/components/views/profile'
+import dashboard from '@/components/views/users/dashboard'
+import myaccount from '@/components/views/users/myaccount'
+import addressbook from '@/components/views/users/addressbook'
+import myorders from '@/components/views/users/myorders'
+import mywishlist from '@/components/views/users/mywishlist'
+import changepassword from '@/components/views/users/changepassword'
+import profile from '@/components/views/users/profile'
 
 import blog from '@/components/views/blog'
 import hot_deals from '@/components/views/hot_deals'
@@ -107,11 +113,11 @@ const routes = [
 	    path: '/checkout',
 	    component: checkout
 	},
-	{
-	    name: 'orders',
-	    path: '/my-orders',
-	    component: myorders
-	},
+	// {
+	//     name: 'orders',
+	//     path: '/my-orders',
+	//     component: myorders
+	// },
 	{
 	    name: 'invoice',
 	    path: '/invoice/:oid',
@@ -142,11 +148,41 @@ const routes = [
 		path: '/discount',
 		component: discount
 	},
+  {
+    name: 'dashboard',
+    path: '/dashboard',
+    component: dashboard
+  },
 	{
-		name: 'profile',
-		path: '/profile',
-		component: profile
+		name: 'myaccount',
+		path: '/myaccount',
+		component: myaccount
 	},
+  {
+    name: 'addressbook',
+    path: '/addressbook',
+    component: addressbook
+  },
+  {
+    name: 'myorders',
+    path: '/myorders',
+    component: myorders
+  },
+  {
+    name: 'mywishlist',
+    path: '/mywishlist',
+    component: mywishlist
+  },
+  {
+    name: 'changepassword',
+    path: '/changepassword',
+    component: changepassword
+  },
+  {
+    name: 'profile',
+    path: '/profile/:id',
+    component: profile
+  },
 	{
 		name: 'contact',
 		path: '/contact',

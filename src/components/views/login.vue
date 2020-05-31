@@ -85,7 +85,10 @@
                 let email=this.$store.getters.getUser.email;
                 //alert(email);
                 if(email){
-                    this.$router.push('/profile');
+                    let route_name=this.$router.currentRoute.name;
+                    if(route_name=='login'){
+                        this.$router.push('/dashboard');
+                    }
                 }
             },
             login(e){
@@ -121,7 +124,7 @@
                                     self.showcode = false
                                     self.cloading = false
                                     self.success='Successfully Loggedin.';
-                                    this.$router.push('/profile');
+                                    this.$router.push('/dashboard');
                                 }
 
                             })
@@ -138,7 +141,7 @@
                                 }else{
                                     self.error = ''
                                     self.success='Successfully Loggedin.';
-                                    this.$router.push('/profile');
+                                    this.$router.push('/dashboard');
                                 }
 
 

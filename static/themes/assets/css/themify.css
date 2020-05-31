@@ -6,3 +6,19 @@
   line-height: 1;
   text-align: left;
 }
+
+.box-account.box-info .box {
+  background-color: none !important;
+  border-radius: 0 !important;
+  -webkit-box-shadow:none !important;
+  box-shadow: none !important;
+
+  padding: 0 !important;
+}
+
+.tabs-component{
+  margin-top:0 !important;
+}
+.tabs-component .tabs-component-panels{
+  padding:1em !important;
+}

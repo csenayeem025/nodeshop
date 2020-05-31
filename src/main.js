@@ -42,7 +42,7 @@ Vue.use(vueCookie)
 Vue.use(VueLodash, lodash)
 Vue.use(VueCarousel)
 Vue.use(Notifications,{velocity})
-
+Vue.use(require('vue-moment'));
 
 
 Vue.component('vue-headful', vueHeadful)
@@ -81,8 +81,9 @@ Vue.config.productionTip = false
 // })
 
 
-Vue.prototype.$host = 'http://admin.onlinebigbazaar.com/api/'
-//Vue.prototype.$host = 'http://127.0.0.1:8000/api/'
+Vue.prototype.$host_domain = 'http://admin.onlinebigbazaar.com'
+//Vue.prototype.$host_domain = 'http://127.0.0.1:8000'
+Vue.prototype.$host = Vue.prototype.$host_domain+'/api/'
 Vue.prototype.$converter = require('number-to-words')
 Vue.prototype.$perPage = 20
 Vue.prototype.$first = (list)=>{
