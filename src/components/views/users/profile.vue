@@ -64,16 +64,19 @@
                         </address></div>
                     </div>
                   </tab>
-                  <tab name="Coming soon 1" :is-disabled="true">
+                  <tab name="Customer" :is-disabled="true">
                     This content will be unavailable while :is-disabled prop set to true
                   </tab>
-                  <tab id="oh-hi-mark" name="Coming soon 2" :is-disabled="true">
+                  <tab id="oh-hi-mark" name="Purchaser" :is-disabled="true">
                     The fragment that is appended to the url can be customized
                   </tab>
                   <tab prefix="<span class='glyphicon glyphicon-star'></span> "
-                       name="Coming soon 3"
+                       name="Treader"
                         :is-disabled="true">
                     A prefix and a suffix can be added
+                  </tab>
+                  <tab name="Professional Service" :is-disabled="true">
+                    This content will be unavailable while :is-disabled prop set to true
                   </tab>
                 </tabs>
 
