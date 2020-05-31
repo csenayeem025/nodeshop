@@ -39,6 +39,10 @@
                 </div>
                 <div class="language-block">
                   <div class="language-dropdown">
+                    <span v-if="uid > 0" class="language-dropdown-click"><router-link class="top_login" :to="{path: '/dashboard/'}">Dashboard</router-link></span>
+                    <span v-else class="language-dropdown-click"><router-link class="top_login" :to="{path: '/login/'}">Login</router-link></span>
+                  </div>
+                  <div class="language-dropdown">
                                 <span  class="language-dropdown-click">
                                     english <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
@@ -427,7 +431,8 @@
                 isLeftMenuShow:'',
                 showburger: false,
                 modalshow: false,
-                item:''
+                item:'',
+                uid:'',
 
             }
         },
@@ -461,13 +466,14 @@
                 }else{
                     this.isLeftMenuShow='';
                 }
+                this.uid=this.$store.getters.getUser.id;
+                console.log('islogged nayeem: ',this.uid);
             }
         },
-
         mounted(){
             this.getFood();
-
-            console.log('page: ',this.$route);
+            this.uid=this.$store.getters.getUser.id;
+            console.log('islogged nayeem: ',this.uid);
             if(this.$route.path=='/' || this.$route.name=='navigate'){
                 this.isLeftMenuShow='show';
             }else{
