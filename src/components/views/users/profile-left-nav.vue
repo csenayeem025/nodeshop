@@ -37,7 +37,7 @@
         },
         watch:{
             $route (to, from){
-              alert(9);
+              //alert(9);
             }
         },
         mounted(){

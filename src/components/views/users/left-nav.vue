@@ -3,7 +3,7 @@
     <div class="block-content is_left_menu">
       <ul>
         <li class="isActive"><router-link :to="{path: '/dashboard/'}">Dashboard</router-link></li>
-        <li class="isActive"><router-link target="_blank" :to="{path: '/profile/'+uid}">My Profile</router-link></li>
+        <li class="isActive"><router-link target="_blank" :to="{path: '/profile/'+(100000000+uid)}">My Profile</router-link></li>
         <li class="isActive"><router-link :to="{path: '/myorders/'}">My Orders</router-link></li>
         <li class="isActive"><router-link :to="{path: '/mywishlist/'}">My Wishlist</router-link></li>
         <li class="isActive"><router-link :to="{path: '/addressbook/'}">Address Book</router-link></li>

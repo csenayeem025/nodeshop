@@ -28,6 +28,33 @@
                           <h6 class="email">{{email}}</h6>
                         </div>
                       </div>
+
+                      <div class="box">
+                        <div class="box-title">
+                          <h3>Organizational Information</h3><a href="#organizationModal" data-toggle="modal">Edit</a></div>
+                        <div class="box-content">
+                          <h6 class="name">{{company_name}}</h6>
+
+                        </div>
+                      </div>
+
+                      <div class="box">
+                        <div class="box-title">
+                          <h3>Educational Information</h3><a href="#educationModal" data-toggle="modal">Edit</a></div>
+                        <div class="box-content">
+                          <h6 class="name">{{education_name}}</h6>
+
+                        </div>
+                      </div>
+
+                      <div class="box">
+                        <div class="box-title">
+                          <h3>Bank Information</h3><a href="#bankModal" data-toggle="modal">Edit</a></div>
+                        <div class="box-content">
+                          <h6 class="name">{{bank_name}}</h6>
+
+                        </div>
+                      </div>
                     </div>
                     <div class="col-sm-6">
                       <form class="theme-form" id="fromElements2" @submit.prevent="processAvatar" >
@@ -161,6 +188,119 @@
     </div>
 
     <!--modal popup end-->
+
+    <!--modal popup start-->
+    <div class="modal fade bd-example-modal-lg theme-modal" id="organizationModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="news-latter">
+              <div class="modal-bg">
+                <div class="offer-content">
+                  <div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="page-title">
+                      <h2>Organizational DETAIL</h2></div>
+
+
+                    <!-- personal deatail section start -->
+                    <div class="contact-page register-page section-big-py-space1 bg-light">
+                      <div class="custom-container1">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <user_company :company_name="company_name"></user_company>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Section ends -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--modal popup start-->
+    <div class="modal fade bd-example-modal-lg theme-modal" id="educationModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="news-latter">
+              <div class="modal-bg">
+                <div class="offer-content">
+                  <div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="page-title">
+                      <h2>Education DETAIL</h2></div>
+
+
+                    <!-- personal deatail section start -->
+                    <div class="contact-page register-page section-big-py-space1 bg-light">
+                      <div class="custom-container1">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <user_education :education_name="education_name"></user_education>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Section ends -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--modal popup end-->
+
+
+    <!--modal popup start-->
+    <div class="modal fade bd-example-modal-lg theme-modal" id="bankModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="news-latter">
+              <div class="modal-bg">
+                <div class="offer-content">
+                  <div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="page-title">
+                      <h2>BANK DETAIL</h2></div>
+
+
+                    <!-- personal deatail section start -->
+                    <div class="contact-page register-page section-big-py-space1 bg-light">
+                      <div class="custom-container1">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <user_bank :bank_name="bank_name"></user_bank>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Section ends -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--modal popup end-->
+
+
     <!-- section end -->
     <div class="loader-wrapper" v-if="loading==true">
       <div>
@@ -173,6 +313,9 @@
 <script>
     import Datepicker from 'vuejs-datepicker';
     import left_nav from '@/components/views/users/left-nav';
+    import user_company from '@/components/views/users/user-company';
+    import user_education from '@/components/views/users/user-education';
+    import user_bank from '@/components/views/users/user-bank';
     import axios from 'axios';
     export default {
 
@@ -181,6 +324,9 @@
         data () {
             return {
                 loading:false,
+                education_name:'Not yet set.',
+                company_name:'Not yet set',
+                bank_name:'Not yet set',
                 name:'',
                 mobile:'',
                 country_id:'',
@@ -195,7 +341,10 @@
             }
         },
         components:{
-            left_nav:left_nav,Datepicker
+            left_nav:left_nav,Datepicker,
+            user_company:user_company,
+            user_education:user_education,
+            user_bank:user_bank
         },
         mounted(){
             this.name=this.$store.getters.getUser.name;
@@ -311,16 +460,33 @@
 
 <style lang="css" scoped>
   #myaccountModal .form-group,
-  #myaccountModal .form-control{
+  #myaccountModal .form-control,
+  #organizationModal .form-group,
+  #organizationModal .form-control,
+  #educationModal .form-group,
+  #educationModal .form-control,
+  #bankModal .form-group,
+  #bankModal .form-control{
     text-align: left !important;
   }
-  #myaccountModal .theme-form{
+  #myaccountModal .theme-form,
+  #organizationModal .theme-form,
+  #educationModal .theme-form,
+  #bankModal .theme-form{
     border:0 !important;
   }
-  #myaccountModal select{
-    height: 45px;
+  #myaccountModal select,
+  #organizationModal select,
+  #educationModal select,
+  #bankModal select{
+    height: 50px;
   }
   .mydate input{
     width:100% !important;
+  }
+
+  .modal-file-upload,
+  .theme-modal .modal-dialog .modal-content .modal-body .modal-bg .offer-content img{
+    margin-bottom: 10px !important;
   }
 </style>

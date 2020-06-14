@@ -21,12 +21,34 @@
                       </div>
                     </div>
                     <div class="col-md-12">
+                      <h5>Profile Information</h5>
                       <p v-if="name!=''"><b>{{name}}</b></p>
+                      <p v-if="acc_code!=''">A/C Code: <b>{{acc_code}}</b></p>
                       <p v-if="mobile!=''">{{mobile}}</p>
                       <p v-if="email!=''"><a :href="'mail:'+email">{{email}}</a></p>
                       <p v-if="user_country_name!=''">{{user_country_name}}</p>
                       <p v-if="dateofbirth!=''">Birthday: {{ dateofbirth | moment("MMMM Do ") }}</p>
-                      <p v-if="created_at!=''">Member Since: {{ created_at | moment("MMMM Do, YYYY") }}</p>
+                      <p v-if="created_at!=''">Open Date: {{ created_at | moment("MMMM Do, YYYY") }}</p>
+                    </div>
+                    <div class="col-md-12">
+                      <h5>Organizational Information</h5>
+                      <p v-if="company_name!=''"><b>{{company_name}}</b></p>
+                      <p v-if="company_email!=''">{{company_email}}</p>
+                      <p v-if="company_mobile!=''">{{company_mobile}}</p>
+                      <p v-if="company_type_name!=''">{{company_type_name}}</p>
+                      <p v-if="company_address!=''">{{company_address}}</p>
+                    </div>
+                    <div class="col-md-12">
+                      <h5>Certification Information</h5>
+                      <p v-if="education_name!=''"><b>{{education_name}}</b></p>
+                      <p v-if="education_type!=''">{{education_type}}</p>
+                    </div>
+                    <div class="col-md-12">
+                      <h5>Bank Information</h5>
+                      <p v-if="bank_name!=''"><b>{{bank_name}}</b></p>
+                      <p v-if="account_type!=''"> {{account_type}}</p>
+                      <p v-if="account_number!=''">{{account_number}}</p>
+                      <p v-if="branch_name!=''">{{branch_name}}</p>
                     </div>
                   </div>
                 </div>
@@ -111,6 +133,7 @@
                 error_text:null,
                 submitted:false,
 
+                acc_code:'',
                 name:'',
                 email:'',
                 mobile:'',
@@ -118,6 +141,23 @@
                 user_country_name:'',
                 dateofbirth:'',
                 created_at:'',
+
+                company_name:'',
+                company_mobile:'',
+                company_email:'',
+                company_address:'',
+                company_sub_company:'',
+                company_type_id:'',
+                company_type_name:'',
+                company_type_ids:new Array(),
+
+                education_name:'',
+                education_type:'',
+
+                bank_name:'',
+                account_type:'Savings',
+                account_number:'',
+                branch_name:'',
 
                 billing_flat_plot:'',
                 billing_address:'',
@@ -145,12 +185,13 @@
         },
         mounted(){
             this.current_profile_id=this.$router.currentRoute.params.id;
+            this.acc_code=this.current_profile_id;
             this.getCountries();
         },
         methods:{
             getInformation(){
                 var formData = new FormData();
-                formData.append('user_id', this.current_profile_id);
+                formData.append('user_id', this.current_profile_id-100000000);
                 axios.post(this.$host+'get_user_profile',formData, { headers: { 'Content-Type': 'multipart/form-data'  }})
                     .then((response) => {
                         this.loading = false;
@@ -169,6 +210,28 @@
                             this.created_at=alldata.information.created_at;
                             this.user_country_name=this.countries[alldata.information.country_id];
                         }
+
+                        if(alldata.company.id){
+                            this.company_name=alldata.company.name;
+                            this.company_mobile=alldata.company.mobile;
+                            this.company_email=alldata.company.email;
+                            this.company_address=alldata.company.address;
+                            this.company_sub_company=alldata.company.sub_company;
+                            this.company_type_name=this.company_type_ids[alldata.company.type_id];
+                        }
+
+                        if(alldata.bank.id){
+                            this.bank_name=alldata.bank.bank_name;
+                            this.account_type=alldata.bank.account_type;
+                            this.account_number=alldata.bank.account_number;
+                            this.branch_name=alldata.bank.branch_name;
+                        }
+
+                        if(alldata.educations[0].id){
+                            this.education_name=alldata.educations[0].name;
+                            this.education_type=alldata.educations[0].education_type;
+                        }
+
                         if(alldata.addresses.id){
                             this.billing_flat_plot=alldata.addresses.billing_flat_plot;
                             this.billing_address=alldata.addresses.billing_address;
@@ -207,6 +270,27 @@
                         this.loading = false;
                     });
             },
+            getCompanyTypes(){
+                const formData = new FormData();
+                let self=this;
+                axios.post(this.$host+'getCompanyTypes',formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    }})
+                    .then((response) => {
+                        this.loading = false;
+                        if(response.data.length>0){
+                            let len=response.data.length;
+                            for(let i=0;i<len;i++){
+                                this.company_type_ids[response.data[i].id]=response.data[i].name;
+                            }
+                        }
+                        this.getInformation();
+                    })
+                    .catch(function (error) {
+                        this.loading = false;
+                    });
+            },
             getCountries(){
                 const formData = new FormData();
                 axios.post(this.$host+'getCountries',formData, {
@@ -221,7 +305,7 @@
                                 this.countries[response.data[i].CountryId]=response.data[i].name;
                             }
                         }
-                        this.getInformation();
+                        this.getCompanyTypes();
                     })
                     .catch(function (error) {
                         this.loading = false;
@@ -246,5 +330,14 @@
   text-align: center;
 }
 
+.profile_left_nav p{
+  line-height: 1.8 !important;
+}
 
+.profile_left_nav h5{
+  margin-top:15px;
+  background: #7ABE41;
+  color: #fff;
+  padding: 7px;
+}
 </style>
