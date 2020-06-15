@@ -370,6 +370,7 @@
                                 this.loading = false;
                                 if(response.data==1){
                                     this.success='Successfully updated.';
+                                    this.getInformation();
                                 }else{
                                     this.error_text='Sorry, not saved.';
                                 }
@@ -438,10 +439,12 @@
                 axios.post(this.$host+'get_user_information',formData, { headers: { 'Content-Type': 'multipart/form-data'  }})
                     .then((response) => {
                         this.loading = false;
-                        if(response.data.user_id){
-                            this.country_id=response.data.country_id;
-                            this.dateofbirth=response.data.dateofbirth;
-                            this.avatar=response.data.avatar;
+                        if(response.data.information.user_id){
+                            this.name=response.data.user.name;
+                            this.mobile=response.data.user.mobile;
+                            this.country_id=response.data.information.country_id;
+                            this.dateofbirth=response.data.information.dateofbirth;
+                            this.avatar=response.data.information.avatar;
                         }
                     })
                     .catch(function (error) {
