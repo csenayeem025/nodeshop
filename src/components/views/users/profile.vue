@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                       <div class="preview">
 
-                        <img class="user_avatar rounded-circle" v-if="avatar!=''" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
+                        <img class="user_avatar rounded-circle" v-if="avatar!=null" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
                         <img v-else src="/static/assets/images/default-user-avatar.png" style="max-width: 200px" alt=""/>
 
                       </div>
@@ -137,7 +137,7 @@
                 name:'',
                 email:'',
                 mobile:'',
-                avatar:'',
+                avatar:null,
                 user_country_name:'',
                 dateofbirth:'',
                 created_at:'',

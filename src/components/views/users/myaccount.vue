@@ -68,7 +68,7 @@
                         <div class="col-md-12">
                           <div class="preview">
 
-                            <img class="user_avatar" v-if="avatar!=''" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
+                            <img class="user_avatar" v-if="avatar!=null" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
 
                             <img v-else src="/static/assets/images/default-user-avatar.png" style="max-width: 200px" alt=""/>
 
@@ -331,7 +331,7 @@
                 mobile:'',
                 country_id:'',
                 dateofbirth:'',
-                avatar:'',
+                avatar:null,
                 success:null,
                 success_avatar:null,
                 loading: false,
