@@ -439,9 +439,11 @@
                 axios.post(this.$host+'get_user_information',formData, { headers: { 'Content-Type': 'multipart/form-data'  }})
                     .then((response) => {
                         this.loading = false;
-                        if(response.data.information.user_id){
+                        if(response.data.user.id){
                             this.name=response.data.user.name;
                             this.mobile=response.data.user.mobile;
+                        }
+                        if(response.data.information.user_id){
                             this.country_id=response.data.information.country_id;
                             this.dateofbirth=response.data.information.dateofbirth;
                             this.avatar=response.data.information.avatar;

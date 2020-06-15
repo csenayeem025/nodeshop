@@ -81,8 +81,8 @@ Vue.config.productionTip = false
 // })
 
 
-Vue.prototype.$host_domain = 'http://admin.onlinebigbazaar.com'
-//Vue.prototype.$host_domain = 'http://127.0.0.1:8000'
+//Vue.prototype.$host_domain = 'http://admin.onlinebigbazaar.com'
+Vue.prototype.$host_domain = 'http://127.0.0.1:8000'
 Vue.prototype.$host = Vue.prototype.$host_domain+'/api/'
 Vue.prototype.$converter = require('number-to-words')
 Vue.prototype.$perPage = 20
