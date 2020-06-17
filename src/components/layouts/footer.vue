@@ -106,10 +106,17 @@
                        </div>
                        <div class="footer-contant">
                          <ul class="contact-list">
-                           <li><i class="fa fa-map-marker"></i>Onlinebigbazaar store<br>Bangladesh-<span>2016</span></li>
-                           <li><i class="fa fa-phone"></i>call us: <span>+88 01738 912894</span></li>
-                           <li><i class="fa fa-envelope-o"></i>email us: support@onlinebigbazaar.com</li>
-                           <li><i class="fa fa-fax"></i>fax <span>123456789</span></li>
+                           <li><i class="fa fa-map-marker"></i>
+<!--                             Onlinebigbazaar store<br>-->
+                             <b>Trisan System</b><br/>
+                             House# 14, Road No# 01/A, <br/>
+                           Word No# 74, West Nandipara,<br/>
+                             Bonosri, Khilgon, Dhaka-1219<br/>
+                           </li>
+                           <li><i class="fa fa-phone"></i>call us: <span>+088 02 47291503</span></li>
+                           <li><i class="fa fa-phone"></i>Hot Line No: <span>01968 805510</span></li>
+                           <li><i class="fa fa-envelope-o"></i>email us: shahossainbd83@yahoo.com</li>
+<!--                           <li><i class="fa fa-fax"></i>fax <span>123456789</span></li>-->
                          </ul>
                        </div>
                      </div>

@@ -58,7 +58,7 @@
                                   <div class="contact-banner-contain">
                                     <div class="contact-banner-img"><img src="static/themes/assets/images/layout-1/call-img.png" class="img-fluid" alt="call-banner"></div>
                                     <div><h3>if you have any question please call us</h3></div>
-                                    <div><h2>+88 01738 912894</h2></div>
+                                    <div><h2>+88 01968 805510</h2></div>
                                   </div>
                                 </div>
                               </div>

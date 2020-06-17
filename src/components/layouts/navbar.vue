@@ -97,7 +97,7 @@
                   <i class="fa fa-volume-control-phone tell" aria-hidden="true"></i>
                   <span class="contact-item">
                             call us
-                            <span>+88 01738 912894</span>
+                            <span>+88 01968 805510</span>
                         </span>
                   <div class="onhover-dropdown ">
                     <router-link :to="{path: '/login/'}"><i class="icon-user mobile-user"></i></router-link>
