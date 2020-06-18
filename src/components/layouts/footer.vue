@@ -109,6 +109,7 @@
                            <li><i class="fa fa-map-marker"></i>
 <!--                             Onlinebigbazaar store<br>-->
                              <b>Trisan System</b><br/>
+                             Shathi Vola <br/>
                              House# 14, Road No# 01/A, <br/>
                            Word No# 74, West Nandipara,<br/>
                              Bonosri, Khilgon, Dhaka-1219<br/>
