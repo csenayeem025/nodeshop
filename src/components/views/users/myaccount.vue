@@ -21,6 +21,43 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="box">
+                        <form class="theme-form" id="fromElements2" @submit.prevent="processAvatar" >
+                          <div class="msg-nwts-vue" v-if="error_text_avatar">
+                            <div class="alert alert-danger" v-html="error_text_avatar"></div>
+                          </div>
+                          <div class="msg-nwts-vue" v-if="success_avatar">
+                            <div class="alert alert-success" v-html="success_avatar"></div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-md-12">
+                              <div class="preview">
+
+                                <img class="user_avatar" v-if="avatar!=null" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
+
+                                <img v-else src="/static/assets/images/default-user-avatar.png" style="max-width: 200px" alt=""/>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-md-12">
+                              <label for="">User Avatar</label>
+                              <input type="file" id="user-avatar" name="avatar">
+                            </div>
+
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-md-12">
+                              <button class="btn btn-sm btn-normal">Save</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="box">
                         <div class="box-title">
                           <h3>Account Information</h3><a href="#myaccountModal" data-toggle="modal">Edit</a></div>
                         <div class="box-content">
@@ -37,7 +74,8 @@
 
                         </div>
                       </div>
-
+                    </div>
+                    <div class="col-sm-6">
                       <div class="box">
                         <div class="box-title">
                           <h3>Educational Information</h3><a href="#educationModal" data-toggle="modal">Edit</a></div>
@@ -57,37 +95,7 @@
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <form class="theme-form" id="fromElements2" @submit.prevent="processAvatar" >
-                        <div class="msg-nwts-vue" v-if="error_text_avatar">
-                          <div class="alert alert-danger" v-html="error_text_avatar"></div>
-                        </div>
-                        <div class="msg-nwts-vue" v-if="success_avatar">
-                          <div class="alert alert-success" v-html="success_avatar"></div>
-                        </div>
-                      <div class="form-group row">
-                        <div class="col-md-12">
-                          <div class="preview">
 
-                            <img class="user_avatar" v-if="avatar!=null" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
-
-                            <img v-else src="/static/assets/images/default-user-avatar.png" style="max-width: 200px" alt=""/>
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-md-12">
-                          <label for="">User Avatar</label>
-                          <input type="file" id="user-avatar" name="avatar">
-                        </div>
-
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-md-12">
-                          <button class="btn btn-sm btn-normal mb-lg-5">Save</button>
-                        </div>
-                      </div>
-                      </form>
                     </div>
                   </div>
 

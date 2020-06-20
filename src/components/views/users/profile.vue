@@ -66,7 +66,7 @@
 
             </div>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-6">
             <div class="dashboard-right">
               <div class="dashboard">
 
@@ -95,9 +95,9 @@
                         </address></div>
                     </div>
                   </tab>
-                  <tab name="Customer" :is-disabled="true">
-                    This content will be unavailable while :is-disabled prop set to true
-                  </tab>
+<!--                  <tab name="Customer" :is-disabled="true">-->
+<!--                    This content will be unavailable while :is-disabled prop set to true-->
+<!--                  </tab>-->
                   <tab id="oh-hi-mark" name="Purchaser" :is-disabled="true">
                     The fragment that is appended to the url can be customized
                   </tab>
@@ -112,6 +112,14 @@
                 </tabs>
 
 
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="dashboard-right">
+              <div class="block-content">
+                Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
               </div>
             </div>
           </div>
@@ -353,4 +361,8 @@
   color: #fff;
   padding: 7px;
 }
+
+  .dashboard-right .block-content{
+    padding: 15px;
+  }
 </style>
