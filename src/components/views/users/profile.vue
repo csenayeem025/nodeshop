@@ -14,11 +14,10 @@
                   <div class="form-group row">
                     <div class="col-md-12">
                       <div class="preview">
-
                         <img class="user_avatar rounded-circle" v-if="avatar!=null" :src="$host_domain+'/'+avatar" style="max-width: 200px" alt=""/>
                         <img v-else src="/static/assets/images/default-user-avatar.png" style="max-width: 200px" alt=""/>
-
                       </div>
+                      <img v-if="id_isverify==1" width="24px" src="/static/assets/images/Verified-Account-Logo.png" style="max-width: 200px" alt="Profile is Verified"/>
                     </div>
                     <div class="col-md-12">
                       <h5>Profile Information</h5>
@@ -155,6 +154,7 @@
                 email:'',
                 mobile:'',
                 national_id:'',
+                id_isverify:0,
                 avatar:null,
                 user_country_name:'',
                 dateofbirth:'',
@@ -229,6 +229,7 @@
                             this.created_at=alldata.information.created_at;
                             this.user_country_name=this.countries[alldata.information.country_id];
                             this.national_id=alldata.information.national_id;
+                            this.id_isverify=alldata.information.id_isverify;
                         }
 
                         if(alldata.company.id){
