@@ -166,6 +166,13 @@
                                     <p v-if="submitted && errors.has('dateofbirth')" class="error-message">{{ errors.first('dateofbirth') }}</p>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label for="national_id">National ID *</label>
+                                    <input type="text" class="form-control" id="national_id" placeholder="Enter national id"v-validate="'required'" v-model="national_id" name="national_id" >
+                                    <p v-if="submitted && errors.has('national_id')" class="error-message">{{ errors.first('national_id') }}</p>
+                                  </div>
+                                </div>
                                 <div class="col-md-12">
                                   <button class="btn btn-sm btn-normal mb-lg-5">Save</button>
                                 </div>
@@ -329,6 +336,7 @@
                 bank_name:'Not yet set',
                 name:'',
                 mobile:'',
+                national_id:'',
                 country_id:'',
                 dateofbirth:'',
                 avatar:null,
@@ -446,6 +454,7 @@
                         if(response.data.information.user_id){
                             this.country_id=response.data.information.country_id;
                             this.dateofbirth=response.data.information.dateofbirth;
+                            this.national_id=response.data.information.national_id;
                             this.avatar=response.data.information.avatar;
                         }
                     })

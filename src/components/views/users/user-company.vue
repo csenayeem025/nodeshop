@@ -50,8 +50,8 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="company_address">Company Concern:</label>
-            <textarea class="form-control"  id="company_address" v-model="sub_company" name="sub_company" placeholder="Company Concern"></textarea>
+            <label for="sub_company">Company Concern:</label>
+            <textarea class="form-control"  id="sub_company" v-model="sub_company" name="sub_company" placeholder="Company Concern"></textarea>
             <p v-if="submitted && errors.has('sub_company')" class="error-message">{{ errors.first('sub_company') }}</p>
           </div>
         </div>
@@ -233,7 +233,7 @@
                             this.name=response.data.name;
                             this.email=response.data.email;
                             this.mobile=response.data.mobile;
-                            this.address=response.data.email;
+                            this.address=response.data.address;
                             this.sub_company=response.data.sub_company;
                             this.type_id=response.data.type_id;
                             this.tradelicence_file=response.data.tradelicence_file == null ? '' : response.data.tradelicence_file;

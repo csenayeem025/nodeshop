@@ -22,33 +22,42 @@
                     </div>
                     <div class="col-md-12">
                       <h5>Profile Information</h5>
-                      <p v-if="name!=''"><b>{{name}}</b></p>
-                      <p v-if="acc_code!=''">A/C Code: <b>{{acc_code}}</b></p>
-                      <p v-if="mobile!=''">{{mobile}}</p>
-                      <p v-if="email!=''"><a :href="'mail:'+email">{{email}}</a></p>
-                      <p v-if="user_country_name!=''">{{user_country_name}}</p>
-                      <p v-if="dateofbirth!=''">Birthday: {{ dateofbirth | moment("MMMM Do ") }}</p>
-                      <p v-if="created_at!=''">Open Date: {{ created_at | moment("MMMM Do, YYYY") }}</p>
+                      <table>
+                        <tr v-if="name!='' && name!=null"><td>Name</td><td width="20px">:</td><td><b>{{name}}</b></td></tr>
+                        <tr v-if="acc_code!='' && acc_code!=null"><td>A/C Code</td><td width="20px">:</td><td>{{acc_code}}</td></tr>
+                        <tr v-if="dateofbirth!='' && dateofbirth!=null"><td>Birthday</td><td width="20px">:</td><td>{{ dateofbirth | moment("MMMM Do ") }}</td></tr>
+                        <tr v-if="created_at!='' && created_at!=null"><td>Open Date</td><td width="20px">:</td><td>{{ created_at | moment("MMMM Do, YYYY") }}</td></tr>
+                        <tr v-if="user_country_name!='' && user_country_name!=null"><td>Country</td><td width="20px">:</td><td>{{user_country_name}}</td></tr>
+                        <tr v-if="mobile!='' && mobile!=null"><td>Contact</td><td width="20px">:</td><td>{{mobile}}</td></tr>
+                        <tr v-if="national_id!='' && national_id!=null"><td>National ID No.</td><td width="20px">:</td><td>{{national_id}}</td></tr>
+                      </table>
                     </div>
                     <div class="col-md-12">
                       <h5>Organizational Information</h5>
-                      <p v-if="company_name!=''"><b>{{company_name}}</b></p>
-                      <p v-if="company_email!=''">{{company_email}}</p>
-                      <p v-if="company_mobile!=''">{{company_mobile}}</p>
-                      <p v-if="company_type_name!=''">{{company_type_name}}</p>
-                      <p v-if="company_address!=''">{{company_address}}</p>
+                      <table>
+                        <tr v-if="company_name!='' && company_name!=null"><td>Company Name</td><td width="20px">:</td><td><b>{{company_name}}</b></td></tr>
+                        <tr v-if="company_type_name!='' && company_type_name!=null"><td>Type</td><td width="20px">:</td><td>{{company_type_name}}</td></tr>
+                        <tr v-if="sub_company!='' && sub_company!=null"><td>Company Concern</td><td width="20px">:</td><td>{{sub_company}}</td></tr>
+                        <tr v-if="company_address!='' && company_address!=null"><td>Address</td><td width="20px">:</td><td>{{company_address}}</td></tr>
+                        <tr v-if="company_mobile!='' && company_mobile!=null"><td>Contact</td><td width="20px">:</td><td>{{company_mobile}}</td></tr>
+                        <tr v-if="company_email!='' && company_email!=null"><td>Email</td><td width="20px">:</td><td>{{company_email}}</td></tr>
+                      </table>
                     </div>
                     <div class="col-md-12">
                       <h5>Certification Information</h5>
-                      <p v-if="education_name!=''"><b>{{education_name}}</b></p>
-                      <p v-if="education_type!=''">{{education_type}}</p>
+                      <table>
+                        <tr v-if="education_name!='' && education_name!=null"><td>Education</td><td width="20px">:</td><td>{{education_name}}</td></tr>
+                        <tr v-if="education_type!='' && education_type!=null"><td>Type</td><td width="20px">:</td><td>{{education_type}}</td></tr>
+                      </table>
                     </div>
                     <div class="col-md-12">
                       <h5>Bank Information</h5>
-                      <p v-if="bank_name!=''"><b>{{bank_name}}</b></p>
-                      <p v-if="account_type!=''"> {{account_type}}</p>
-                      <p v-if="account_number!=''">{{account_number}}</p>
-                      <p v-if="branch_name!=''">{{branch_name}}</p>
+                      <table>
+                        <tr v-if="bank_name!='' && bank_name!=null"><td>Bank Name</td><td width="20px">:</td><td>{{bank_name}}</td></tr>
+                        <tr v-if="branch_name!='' && branch_name!=null"><td>Branch</td><td width="20px">:</td><td>{{branch_name}}</td></tr>
+                        <tr v-if="account_number!='' && account_number!=null"><td>A/C No</td><td width="20px">:</td><td>{{account_number}}</td></tr>
+                        <tr v-if="account_type!='' && account_type!=null"><td>A/C Type</td><td width="20px">:</td><td>{{account_type}}</td></tr>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -137,12 +146,14 @@
                 name:'',
                 email:'',
                 mobile:'',
+                national_id:'',
                 avatar:null,
                 user_country_name:'',
                 dateofbirth:'',
                 created_at:'',
 
                 company_name:'',
+                sub_company:'',
                 company_mobile:'',
                 company_email:'',
                 company_address:'',
@@ -209,10 +220,12 @@
                             this.dateofbirth=alldata.information.dateofbirth;
                             this.created_at=alldata.information.created_at;
                             this.user_country_name=this.countries[alldata.information.country_id];
+                            this.national_id=alldata.information.national_id;
                         }
 
                         if(alldata.company.id){
                             this.company_name=alldata.company.name;
+                            this.sub_company=alldata.company.sub_company;
                             this.company_mobile=alldata.company.mobile;
                             this.company_email=alldata.company.email;
                             this.company_address=alldata.company.address;

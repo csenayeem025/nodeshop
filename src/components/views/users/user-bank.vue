@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-12 select_input">
           <div class="form-group">
-            <label >Education Type *</label>
+            <label >Account Type *</label>
             <select class="form-control" id="account_type" size="1" v-validate="'required'" v-model="account_type" name="account_type" >
               <option>Select</option>
               <option>Savings</option>
