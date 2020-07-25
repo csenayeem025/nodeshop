@@ -47,7 +47,7 @@
                                     english <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
                     <ul class="language-dropdown-open">
-                      <li><a href="#">English</a></li>
+                      <li ><a href="#">English</a></li>
                       <li><a href="#">বাংলা</a></li>
                       <li><a href="#">हिन्दी</a></li>
                       <li><a href="#">Chinese</a></li>
@@ -57,11 +57,9 @@
                                 <span class="curroncy-dropdown-click">
                                     BDT<i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </span>
+
                     <ul class="curroncy-dropdown-open">
-                      <li><a href="#"><i class="icofont icofont-cur-taka"></i>BDT</a></li>
-                      <li><a href="#"><i class="fa fa-usd"></i>usd</a></li>
-                      <li><a href="#"><i class="fa fa-rupee"></i>rupee</a></li>
-                      <li><a href="#"><i class="fa fa-cny"></i>Renminbi</a></li>
+                      <li v-for="(item, index) in currencies " ><a href="javascript:void(0);"><i :class="item.icon"></i>{{item.name}}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -433,14 +431,21 @@
                 modalshow: false,
                 item:'',
                 uid:'',
-
+                currencies:[],
             }
         },
         computed: {
 
         },
         methods: {
-
+            getCurrencies(){
+                var self = this
+                axios.get(this.$host+'settings-currencies')
+                    .then(response=>{
+                        console.log(response.data);
+                        self.currencies = response.data;
+                    })
+            },
             getFood(){
                 var self = this
                 axios.get(this.$host+'items/Food')
@@ -472,6 +477,7 @@
         },
         mounted(){
             this.getFood();
+            this.getCurrencies();
             this.uid=this.$store.getters.getUser.id;
             console.log('islogged nayeem: ',this.uid);
             if(this.$route.path=='/' || this.$route.name=='navigate'){

@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-12 ">
-                    <input type="hidden" name="role" v-model="role" value="vendor" />
+                    <input type="hidden" name="group_id" v-model="group_id" value="3" />
                     <p>Do you want to create a <router-link  class="txt-default" :to="{path: '/register/'}">Customer Account</router-link>?</p>
                     <p >Have you already account? <router-link  class="txt-default" :to="{path: '/login/'}">click</router-link> here to <router-link  class="txt-default" :to="{path: '/login/'}">Login</router-link></p>
                   </div>
@@ -80,7 +80,7 @@
             mobile: '',
             email: '',
             password: '',
-            role:'vendor'
+            group_id:3 //'vendor'
         }
     }
     export default {
@@ -98,7 +98,7 @@
                 error: '',
                 sname:'',
                 name:'',
-                role:'vendor',
+                group_id:3, //'vendor'
                 remail:'',
                 rpassword:'',
                 semail:'',
@@ -159,7 +159,7 @@
                 this.mobile= '';
                 this.email= '';
                 this.password= '';
-                this.role='vendor';
+                this.group_id=3;
             }
         },
         computed:{

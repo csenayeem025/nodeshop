@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-12 ">
-                    <input type="hidden" name="role" value="customer" />
+                    <input type="hidden" name="group_id" value="4" />
                     <p>Do you want to create a <router-link  class="txt-default" :to="{path: '/register-vendor/'}">Vendor Account</router-link>?</p>
                     <p >Have you already account? <router-link  class="txt-default" :to="{path: '/login/'}">click</router-link> here to <router-link  class="txt-default" :to="{path: '/login/'}">Login</router-link></p>
                   </div>
