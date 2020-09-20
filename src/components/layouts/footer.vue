@@ -132,7 +132,7 @@
              <div class="row">
                <div class="col-xl-6 col-md-8 col-sm-12">
                  <div class="footer-end">
-                   <p>&copy; <span>2020</span> Copyright by <a target="_blank" href="https://www.nayeem.dev">Nayeem.dev</a></p>
+                   <p>&copy; <span>2020</span> Copyright</p>
                  </div>
                </div>
                <div class="col-xl-6 col-md-4 col-sm-12">
